@@ -1,0 +1,8 @@
+{
+    "page_title": "My Awesome Homepage, Bok",
+    "css_file": "main.css",
+    "template": "home.html",
+    "contents": [
+        "content1"
+    ]
+}
