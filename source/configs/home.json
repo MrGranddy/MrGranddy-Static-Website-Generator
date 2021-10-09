@@ -3,6 +3,7 @@
     "css_file": "main.css",
     "template": "home.html",
     "contents": [
-        "content1"
+        "bruno_1", "caesar_1", "dio_1", "giorno_1", "giorno_2", "johnny_1", "joseph_1", "joseph_2",
+        "josuke_1", "josuke_2", "kira_1", "kira_2"
     ]
 }

@@ -17,6 +17,7 @@ def prepare_folder(path):
         shutil.rmtree(path)
     os.makedirs(path)
 
+
 def copy_folder(source, target):
     if os.path.exists(target):
         shutil.rmtree(target)

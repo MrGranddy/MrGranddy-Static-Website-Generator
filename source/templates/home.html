@@ -3,8 +3,18 @@
 {% block css_file %}{{ css_file }}{% endblock %}
 {% block content %}
 
-<p>
-    Hey, hey heeey! This is your web page, cheer up m8.
-</p>
+<div class="gallery-grid">
+
+    {% for item in image_grid %}
+
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="{{ item[0] }}" alt="{{ item[1] }}" title="{{ item[2] }}">
+      <figcaption>{{ item[3] }}</figcaption>
+    </figure>
+
+    {% endfor %}
+
+
+</div> <!-- end:gallery-grid -->
 
 {% endblock %}

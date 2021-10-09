@@ -30,7 +30,9 @@ class Generator:
         ]
 
         prepare_folder(self.target)
-        copy_folder( os.path.join(self.source, "static"), os.path.join(self.target, "static") )
+        copy_folder(
+            os.path.join(self.source, "static"), os.path.join(self.target, "static")
+        )
 
         for config_path in self.config_paths:
             self.build_page(config_path)
@@ -53,9 +55,27 @@ class Generator:
 
         check_name_mismatch(name, ".".join(template_name.split(".")[:-1]))
 
+        contents = []
+        for content_name in content_names:
+            contents.append(
+                parse_content(os.path.join(self.source, "contents", content_name))
+            )
+
+        image_grid = [
+            (
+                os.path.join("static", "imgs", content["image_name"]),
+                content["title"],
+                content["title"],
+                content["title"],
+            )
+            for content in contents
+        ]
+
         css_path = os.path.join("static/css", css_file_name)
         template = self.jinja_env.get_template(template_name)
-        html = template.render(css_file=css_path, page_title=page_title)
+        html = template.render(
+            css_file=css_path, page_title=page_title, image_grid=image_grid
+        )
 
         with open(os.path.join(self.target, name + ".html"), "w") as f:
             f.write(html)
