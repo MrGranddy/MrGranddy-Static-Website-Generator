@@ -37,9 +37,6 @@ class Generator:
         for config_path in self.config_paths:
             self.build_page(config_path)
 
-        # template = self.jinja_env.get_template("home.html")
-        # html = template.render()
-
     def build_page(self, config_path):
 
         config = parse_config(config_path)
